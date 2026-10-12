@@ -1,0 +1,264 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --pink: #ff2780;
+    --magenta: #992e57;
+    --dark: #780d40;
+    --light: #e9afc3;
+    --white: #ffffff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--dark), var(--pink), var(--magenta));
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.navbar {
+    background: rgba(125, 16, 67, 0.85);
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 25px;
+}
+
+.logo span {
+    color: #a42e5b;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+nav a:hover {
+    color: #e749889a;
+}
+
+.home {
+    min-height: 85vh;
+    padding: 60px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.home-text {
+    max-width: 550px;
+}
+
+.home-text > p:first-child {
+    color: #d56691;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.home h1 {
+    font-size: 48px;
+    margin: 10px 0;
+}
+
+.home h1 span,
+.section h2 span {
+    color: #f188a9;
+}
+
+.home h3 {
+    margin-bottom: 15px;
+}
+
+.home-text > p:not(:first-child) {
+    margin-bottom: 25px;
+}
+
+.button {
+    display: inline-block;
+    background: var(--dark);
+    border: 1px solid #ffb6d2;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: var(--pink);
+    transform: translateY(-3px);
+}
+
+.profile img {
+    width: 300px;
+    height: 350px;
+    object-fit: cover;
+    border: 4px solid var(--light);
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(50, 0, 25, 0.3);
+    transition: 0.3s;
+}
+
+.profile img:hover {
+    transform: scale(1.03);
+}
+
+.section {
+    padding: 65px 8%;
+    text-align: center;
+    scroll-margin-top: 85px;
+}
+
+.section h2 {
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+#about,
+#skills {
+    background: rgba(90, 0, 40, 0.18);
+}
+
+.about-box,
+.contact-box {
+    max-width: 750px;
+    margin: 20px auto 0;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+}
+
+.subtitle {
+    margin-bottom: 30px;
+    color: var(--light);
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 25px;
+}
+
+.card {
+    background: rgba(90, 0, 40, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    padding-bottom: 18px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(50, 0, 25, 0.3);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.card h3 {
+    color: #df4c84;
+    margin: 15px 10px 8px;
+}
+
+.card p {
+    padding: 0 12px;
+    font-size: 14px;
+}
+
+.skills-list {
+    font-size: 19px;
+    color: var(--light);
+    margin-top: 15px;
+}
+
+.contact-box p {
+    margin-bottom: 20px;
+}
+
+footer {
+    padding: 20px 8%;
+    background: rgba(58, 1, 29, 0.65);
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+footer a:hover {
+    color: #f598bc;
+}
+
+@media (max-width: 850px) {
+    .home {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .home h1 {
+        font-size: 38px;
+    }
+
+    .profile img {
+        width: 250px;
+        height: 290px;
+    }
+
+    .card-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 500px) {
+    .navbar {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .section {
+        padding: 45px 6%;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-box,
+    .contact-box {
+        padding: 22px 16px;
+    }
+
+    footer {
+        justify-content: center;
+        text-align: center;
+    }
+}
